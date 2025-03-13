@@ -121,7 +121,7 @@ st.subheader("📌 Proyectos en GitHub")
 proyectos = [
     {"nombre": "📊 Análisis de Datos con Pandas", "url": "https://github.com/tu_usuario/proyecto1"},
     {"nombre": "🤖 Modelo de Machine Learning", "url": "https://github.com/tu_usuario/proyecto2"},
-    {"nombre": "📈 Dashboard en Streamlit", "url": "https://github.com/tu_usuario/proyecto3"},
+    {"nombre": "📈 Dashboard en Streamlit", "url": "https://github.com/cjhd92/Dashboard-Ventas-Tienda-Tech.git"},
     {"nombre": "🌐 API con FastAPI y PostgreSQL", "url": "https://github.com/tu_usuario/proyecto4"}
 ]
 
