@@ -171,7 +171,8 @@ skills = {
     "TypeScript": "Extensión tipada de JavaScript",
     "Angular": "Framework para desarrollo web",
     "React": "Framework de UI basado en componentes",
-    "NestJS": "Framework para APIs en Node.js"
+    "NestJS": "Framework para APIs en Node.js",
+   
 }
 
 # Aplicar estilos de botón con tooltips
@@ -181,7 +182,14 @@ skills_html = " ".join([f"<span class='skill-badge' title='{info}'>{skill}</span
 st.markdown(skills_html, unsafe_allow_html=True)
 
 
+st.markdown("🌍 Idiomas")
+st.markdown("""
+- 🇪🇸 **Español** – Nativo  
+- 🇬🇧 **Inglés** – B1 (Intermedio)  
+""")
 
+st.write("")  # Línea en blanco
+st.write("")  # Línea en blanco
 
 
 st.subheader("📌 Proyectos en GitHub")
