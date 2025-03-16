@@ -1,13 +1,58 @@
 import streamlit as st
 import os
-from PIL import Image
+from PIL import Image, ImageDraw
+
 
 # Configurar la página con un diseño elegante
 st.set_page_config(page_title="Mi CV Digital", page_icon="📄", layout="wide")
 
+
+
+ 
+def redondear_esquinas(imagen_path, size=(220, 255), radio=10):
+    img = Image.open(imagen_path).convert("RGBA").resize(size)
+
+    mask = Image.new("L", size, 0)
+    draw = ImageDraw.Draw(mask)
+    
+    draw.rounded_rectangle([0, 0, size[0], size[1]], radius=radio, fill=255)
+
+    img_redondeada = Image.new("RGBA", size, (0, 0, 0, 0))
+    img_redondeada.paste(img, (0, 0), mask)
+
+    return img_redondeada
+ 
+
+
+
 # Imagen de perfil y barra lateral
 with st.sidebar:
-    st.image("https://via.placeholder.com/150", width=150)
+    #st.image("foto.jpg", width=150)
+    try:
+        
+        colf1, colf2,colf3 = st.columns([1, 2,1])
+
+        with colf1:
+            pass
+        with colf2:
+            #img_redonda = redondear_imagen("foto2.jpg")
+            #st.image(img_redonda, width=150)
+
+            img_redonda = redondear_esquinas("foto.jpg", size=(250, 300), radio=100)
+            st.image(img_redonda, width=220)
+
+        with colf3:
+            pass
+            
+
+       
+     
+
+        # Mostrar imagen centrada
+        
+    except Exception as e:
+        st.error(f"Error al procesar la imagen: {e}")
+    
     st.title("César Javier Herrera Díaz")
     st.subheader("Ingeniero de Software | Data Engineer")
     
@@ -48,7 +93,19 @@ st.write("")  # Línea en blanco
 st.write("")  # Línea en blanco
 
 
-st.subheader("📅 2022 - 2025     Proyecto de Movilidad Pública")
+colp1,colp2 = st.columns([90, 10])
+with colp1:
+    st.subheader("Sistema de estimación de matrices origen-destino en transporte público")
+with colp2:
+    st.write("2022 - Actualidad")
+
+#st.subheader("📅 2022 - Actualidad:      Universidad de la Coruña")
+st.markdown(
+    "<p style='font-size:18px; font-weight: normal; color: #7F8C8D;'>Universidad de la Coruña - Presencial</p>",
+    unsafe_allow_html=True
+)
+
+
 
 st.write("✔ Desarrollo de un sistema de estimación de matrices origen-destino para redes de transporte público complejas.")
 st.write("✔ Desarrollo de un sistema de estimación de matrices origen-destino para redes de transporte público complejas.")
@@ -56,8 +113,19 @@ st.write("✔ Procesamiento y análisis de datos: Integración y transformación
 st.write("✔ Implementación de modelos predictivos para extrapolar patrones de movilidad.")
 st.write("✔ Creación de una aplicación visual con gráficos dinámicos para la gestión del transporte público.")
 
+colp3,colp4 = st.columns([90, 10])
+with colp3:
+    st.subheader("Procesamiento de Datos Industriales para la Eficiencia en Tratamiento de Agua")
+with colp4:
+    st.write("2019 - 2021")
 
-st.subheader("📅 2019 - 2021     Proyecto de Tratamiento de Agua")
+#st.subheader("📅 2022 - Actualidad:      Universidad de la Coruña")
+st.markdown(
+    "<p style='font-size:18px; font-weight: normal; color: #7F8C8D;'>ESINES (Empresa de Servicios Ingenieros Especializados) - Presencial</p>",
+    unsafe_allow_html=True
+)
+
+#st.subheader("📅 2019 - 2021     Proyecto de Tratamiento de Agua")
 
 st.write("✔ Gestión y análisis de datos de sensores industriales (temperatura, presión, calidad del agua).")
 st.write("✔ Desarrollo de sistemas de monitoreo en tiempo real, almacenamiento en SQL y procesamiento ETL.")
@@ -120,9 +188,9 @@ st.subheader("📌 Proyectos en GitHub")
 
 proyectos = [
     {"nombre": "📊 Análisis de Datos con Pandas", "url": "https://github.com/tu_usuario/proyecto1"},
-    {"nombre": "🤖 Modelo de Machine Learning", "url": "https://github.com/tu_usuario/proyecto2"},
-    {"nombre": "📈 Dashboard en Streamlit", "url": "https://github.com/cjhd92/Dashboard-Ventas-Tienda-Tech.git"},
-    {"nombre": "🌐 API con FastAPI y PostgreSQL", "url": "https://github.com/tu_usuario/proyecto4"}
+    {"nombre": "🤖 Estimación de Generación Eléctrica en Minieólica con IA", "url": "https://github.com/cjhd92/TMF.git"},
+    {"nombre": "📈 Dashboard en Streamlit Tienda tecnológica", "url": "https://github.com/cjhd92/Dashboard-Ventas-Tienda-Tech.git"},
+    {"nombre": "🌐 API Análisis del Clima", "url": "https://github.com/cjhd92/analisis-del-clima-con-api.git"}
 ]
 
 cols = st.columns(2)  # Divide en dos columnas
