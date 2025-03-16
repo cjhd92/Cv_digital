@@ -59,7 +59,8 @@ with st.sidebar:
     # Información de contacto con iconos
     st.write("✉️ **Email:** cjhd92@gmail.com")
     st.write("🔗 [LinkedIn](https://www.linkedin.com/in/cjhd92)")
-    st.write("📍 Galicia, España")
+    st.write("📍 Coruña, _España_")
+    st.write("🪪 Permiso de conducción (_B_)")
     
     # Descargar CV en PDF si existe
     cv_path = "Cv.pdf"
@@ -107,7 +108,6 @@ st.markdown(
 
 
 
-st.write("✔ Desarrollo de un sistema de estimación de matrices origen-destino para redes de transporte público complejas.")
 st.write("✔ Desarrollo de un sistema de estimación de matrices origen-destino para redes de transporte público complejas.")
 st.write("✔ Procesamiento y análisis de datos: Integración y transformación de múltiples formatos de datos, incluyendo GTFS.")
 st.write("✔ Implementación de modelos predictivos para extrapolar patrones de movilidad.")
